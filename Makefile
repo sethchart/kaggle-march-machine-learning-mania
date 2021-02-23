@@ -46,13 +46,9 @@ else
 	aws s3 sync data/ s3://$(BUCKET)/data/ --profile $(PROFILE)
 endif
 
-## Download Data from S3
-sync_data_from_s3:
-ifeq (default,$(PROFILE))
-	aws s3 sync s3://$(BUCKET)/data/ data/
-else
-	aws s3 sync s3://$(BUCKET)/data/ data/ --profile $(PROFILE)
-endif
+## Download Data from Kaggle
+get_data_from_kaggle:
+	kaggle competitions download -c google-cloud-ncaa-march-madness-2020-division-1-mens-tournament -p data/raw/
 
 ## Set up python interpreter environment
 create_environment:
