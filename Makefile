@@ -1,4 +1,4 @@
-.PHONY: clean data lint requirements sync_data_to_s3 sync_data_from_s3
+.PHONY: clean raw_data processed_data lint requirements
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -25,20 +25,22 @@ requirements: test_environment
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
-## Make Dataset
+## Make processed dataset from the contents of data/raw and save the result to data/processed.
 processed_data: requirements
 	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/processed
 
-## Delete all compiled Python files
+## Delete all compiled Python files.
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-## Lint using flake8
+## Lint all python files in the src folder using flake8.
 lint:
 	flake8 src
 
-## Download Data from Kaggle
+## Download data from Kaggle,
+## save the zip archive to data/external,
+## and unzip all files into data/raw.
 raw_data:
 	kaggle competitions download -c ncaam-march-mania-2021 -p $(PROJECT_DIR)/data/external
 	unzip $(PROJECT_DIR)/data/external/ncaam-march-mania-2021.zip -d $(PROJECT_DIR)/data/raw
