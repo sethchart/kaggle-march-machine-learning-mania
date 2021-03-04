@@ -26,7 +26,7 @@ requirements: test_environment
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
 ## Make Dataset
-data: requirements
+processed_data: requirements
 	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/processed
 
 ## Delete all compiled Python files
@@ -38,18 +38,10 @@ clean:
 lint:
 	flake8 src
 
-## Upload Data to S3
-sync_data_to_s3:
-ifeq (default,$(PROFILE))
-	aws s3 sync data/ s3://$(BUCKET)/data/
-else
-	aws s3 sync data/ s3://$(BUCKET)/data/ --profile $(PROFILE)
-endif
-
 ## Download Data from Kaggle
-get_data_from_kaggle:
+raw_data:
 	kaggle competitions download -c ncaam-march-mania-2021 -p $(PROJECT_DIR)/data/external
-	unzip $(PROJECT_DIR)/data/external/google-cloud-ncaa-march-madness-2020-division-1-mens-tournament.zip -d $(PROJECT_DIR)/data/raw
+	unzip $(PROJECT_DIR)/data/external/ncaam-march-mania-2021.zip -d $(PROJECT_DIR)/data/raw
 
 ## Set up python interpreter environment
 create_environment:
