@@ -48,7 +48,7 @@ endif
 
 ## Download Data from Kaggle
 get_data_from_kaggle:
-	kaggle competitions download -c google-cloud-ncaa-march-madness-2020-division-1-mens-tournament -p $(PROJECT_DIR)/data/external
+	kaggle competitions download -c ncaam-march-mania-2021 -p $(PROJECT_DIR)/data/external
 	unzip $(PROJECT_DIR)/data/external/google-cloud-ncaa-march-madness-2020-division-1-mens-tournament.zip -d $(PROJECT_DIR)/data/raw
 
 ## Set up python interpreter environment
