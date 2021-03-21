@@ -67,5 +67,8 @@ This is the order that you should run the notebooks. For each notebook, make sur
 
 Then you're done. Submit your submission file.
 
+6) If you want to fill out a bracket to see how your predictions do in bracket form then 4.0-theberling_bracket_predictions.ipynb can help you with that. 
+
+
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
