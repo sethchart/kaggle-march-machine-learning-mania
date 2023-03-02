@@ -1,6 +1,6 @@
 {
-  "id": "sethchart/1-process-tournament-results",
-  "title": "1 Process Tournament Results",
+  "id": "sethchart/4-merge-datasets-step-2",
+  "title": "4 Merge Datasets Step 2",
   "code_file": "notebook.ipynb",
   "language": "python",
   "kernel_type": "notebook",
@@ -9,6 +9,6 @@
   "enable_internet": "true",
   "dataset_sources": [],
   "competition_sources": ["march-machine-learning-mania-2023"],
-  "kernel_sources": [],
+  "kernel_sources": ["sethchart/2-compute-averages"],
   "model_sources": []
 }
