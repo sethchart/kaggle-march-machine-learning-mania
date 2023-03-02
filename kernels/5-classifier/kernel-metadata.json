@@ -9,6 +9,6 @@
   "enable_internet": "true",
   "dataset_sources": [],
   "competition_sources": ["march-machine-learning-mania-2023"],
-  "kernel_sources": ["sethchart/3-merge-datasets"],
+  "kernel_sources": ["sethchart/3-merge-datasets", "sethchart/4-merge-datasets-step-2"],
   "model_sources": []
 }
