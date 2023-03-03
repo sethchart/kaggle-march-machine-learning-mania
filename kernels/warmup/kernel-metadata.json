@@ -1,0 +1,19 @@
+{
+  "id": "sethchart/warmup",
+  "id_no": 35623789,
+  "title": "Warmup",
+  "code_file": "notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [
+    "competitions/warmup-round-march-machine-learning-mania-2023"
+  ]
+}
