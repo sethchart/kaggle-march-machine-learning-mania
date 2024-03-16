@@ -1,1 +1,7 @@
 kaggle
+numpy
+pandas
+scikit-learn
+xgboost
+optuna
+pytest
