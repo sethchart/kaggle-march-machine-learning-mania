@@ -276,3 +276,9 @@ def train_model(params, X, y, scoring):
     )
     model = model.fit(X, y)
     return model
+
+
+if __name__ == "__main__":
+    pd.read_csv(
+        "/kaggle/input/march-machine-learning-mania-2024/sample_submission.csv"
+    ).to_csv("submission.csv")
